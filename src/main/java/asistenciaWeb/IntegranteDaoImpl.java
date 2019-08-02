@@ -46,15 +46,25 @@ import java.util.List;
 			
 		}
 
-		public boolean saveIntegrante(Integrante integrante) {
-			Integrante nuevoIntegrante = integrante;
+		public boolean saveIntegrante(Integrante integranteParaInsertar) {
+			Integrante nuevoIntegrante = integranteParaInsertar;
+			integranteParaInsertar.setNombre("Carlos Alberto Uribe");
+		    integranteParaInsertar.setIdentificacion("123456789");
+		    integranteParaInsertar.setFechaNacimiento("1965-11-21");
+		    integranteParaInsertar.setEps("SURA");
+		    integranteParaInsertar.setTelefono("4445566");
+		    integranteParaInsertar.setProfesion("Profesor");
+		    integranteParaInsertar.setDireccion("Calle 1 # 23-45");
+		    integranteParaInsertar.setContactoEmergencia("Ana Maria Franco");
+		    integranteParaInsertar.setTelefonoContactoEmergencia("5556677");
+		
 			boolean respuesta = false;
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con=DriverManager.getConnection(  
-						"jdbc:mysql://localhost:3306/asistencia?serverTimezone=UTC","root","85042453019"); 
+						"jdbc:mysql://localhost:3306/asistenciaWeb?serverTimezone=UTC","root","85042453019"); 
 				Statement statement=con.createStatement();  
-				int insertResult=statement.executeUpdate("insert into integrantes (nombre, identificacion, fecha_nacimiento, eps, telefono, profesion, direccion, nombre_contacto_emergencia, telefono_contacto_emergencia) values ('"+nuevoIntegrante.getNombre()+"', '"+nuevoIntegrante.getIdentificacion()+"', '1985-04-24', '"+nuevoIntegrante.getEps()+"', '"+nuevoIntegrante.getTelefono()+"', '"+nuevoIntegrante.getProfesion()+"', '"+nuevoIntegrante.getDireccion()+"', '"+nuevoIntegrante.getContactoEmergencia()+"', '"+nuevoIntegrante.getTelefonoContactoEmergencia()+"');"); 
+				int insertResult=statement.executeUpdate("insert into integrantes (nombre, identificacion, fecha_nacimiento, eps, telefono, profesion, direccion, nombre_contacto_emergencia, telefono_contacto_emergencia) values ('\"+nuevoIntegrante.getNombre()+\"', '\"+nuevoIntegrante.getIdentificacion()+\"', '1985-04-24', '\"+nuevoIntegrante.getEps()+\"', '\"+nuevoIntegrante.getTelefono()+\"', '\"+nuevoIntegrante.getProfesion()+\"', '\"+nuevoIntegrante.getDireccion()+\"', '\"+nuevoIntegrante.getContactoEmergencia()+\"', '\"+nuevoIntegrante.getTelefonoContactoEmergencia()+\"');"); 
 				con.close();
 				respuesta = true;
 			} catch (ClassNotFoundException | SQLException e) {
