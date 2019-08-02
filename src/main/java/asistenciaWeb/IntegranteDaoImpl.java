@@ -45,6 +45,8 @@ import java.util.List;
 		}  
 			
 		}
+	
+		//Método para guardar un integrante en la base de datos
 
 		public boolean saveIntegrante(Integrante integranteParaInsertar) {
 			Integrante nuevoIntegrante = integranteParaInsertar;

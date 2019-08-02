@@ -15,7 +15,7 @@ public class Integrante {
     private String telefonoContactoEmergencia;
     private String rol;
 
-    //Constructores
+    //Método Constructor
     public Integrante(){
     }
     

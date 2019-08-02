@@ -12,7 +12,7 @@ public class SesionEntrenamiento {
     private String planEntrenamiento;
     private List<Integrante> asistencia;
 
-    //Constructor
+    //Método Constructor
     public SesionEntrenamiento(){
         asistencia = new ArrayList<>();
     }

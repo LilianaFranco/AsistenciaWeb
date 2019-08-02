@@ -14,7 +14,7 @@ public class Club {
     private Integrante entrenador;
     private List<Integrante> integrantes;
 
-    //Constructor
+    //Método Constructor
     public Club(){
         integrantes = new ArrayList<>();
     }
